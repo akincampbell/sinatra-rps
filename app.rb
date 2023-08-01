@@ -2,7 +2,8 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  erb(:layout)
+  #erb(:layout)
+  "<h1>Hello world</h1>"
 end
 
 

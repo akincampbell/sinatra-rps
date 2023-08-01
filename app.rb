@@ -7,17 +7,17 @@ end
 
 
 get("/rock") do
-  "<h1>hello</h1>"
-  i = rand(0..2)
-  
-  rps_opp_rock = ["rock", "paper", "scizzors"]
+  moves = ["rock", "paper", "scissors"]
 
-  if rps_opp_rock[i] == "rock"
-    @outcome_rock = "We tied"
-  elsif rps_opp_rock[i] == "paper"
-    @outcome_rock = "We lost"
+  comp_move = moves.sample
+
+  if comp_move == "rock"
+    outcome = "tied"
+  elsif comp_move == "paper"
+    outcome = "lost"
   else
-    @outcome_rock = "We won"
+    outcome = "won"
   end
-  erb(:rock) #doesn't work and colors aren't on
+
+  erb(:zebra)
 end

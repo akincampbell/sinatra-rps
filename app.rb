@@ -2,23 +2,54 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  #erb(:layout)
-  "<h1>Hello world</h1>"
+  erb(:homepage)
 end
 
 
 get("/rock") do
   moves = ["rock", "paper", "scissors"]
 
-  comp_move = moves.sample
+  @comp_move = moves.sample
 
-  if comp_move == "rock"
-    outcome = "tied"
-  elsif comp_move == "paper"
-    outcome = "lost"
+  if @comp_move == "rock"
+    @outcome = "tied"
+  elsif @comp_move == "paper"
+    @outcome = "lost"
   else
-    outcome = "won"
+    @outcome = "won"
   end
 
   erb(:zebra)
+end
+
+get("/paper") do
+  moves = ["rock", "paper", "scissors"]
+
+  @comp_move = moves.sample
+
+  if @comp_move == "rock"
+    @outcome = "won"
+  elsif @comp_move == "paper"
+    @outcome = "tied"
+  else
+    @outcome = "lost"
+  end
+
+  erb(:giraffe)
+end
+
+get("/scissors") do
+  moves = ["rock", "paper", "scissors"]
+
+  @comp_move = moves.sample
+
+  if @comp_move == "rock"
+    @outcome = "won"
+  elsif @comp_move == "paper"
+    @outcome = "tied"
+  else
+    @outcome = "lost"
+  end
+
+  erb(:lion)
 end

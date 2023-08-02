@@ -44,11 +44,11 @@ get("/scissors") do
   @comp_move = moves.sample
 
   if @comp_move == "rock"
-    @outcome = "won"
-  elsif @comp_move == "paper"
-    @outcome = "tied"
-  else
     @outcome = "lost"
+  elsif @comp_move == "paper"
+    @outcome = "won"
+  else
+    @outcome = "tied"
   end
 
   erb(:lion)
